@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Mi thymeleaf</title>
+	</head>
+<body>
+	<h1> Lista de Roles	</h1>
+	<table>
+		<th:block th:each="p: ${ltsRole}">
+			<tr>
+				<td th:text ="${p.idrole}"></td>
+				<td th:text ="${p.name}"></td>
+				<td th:text ="${p.description}"></td>
+			</tr>
+		</th:block>
+	</table>
+
+	
+	<h1>Lista de Personas</h1>
+	<table border="1">
+			<th:block th:each="p: ${ltsPerson}">
+				<tr>
+					<td th:text ="${p.idperson}"></td>
+					<td th:text ="${p.fistname}"></td>
+					<td th:text ="${p.lastname}"></td>
+					<td th:text ="${p.user.name}"></td>
+					<td th:text ="${p.user.role.name}"></td>
+				</tr>
+			</th:block>
+		</table>
+</body>
+</html>
