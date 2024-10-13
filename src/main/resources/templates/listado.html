@@ -1,32 +1,56 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<title>Mi thymeleaf</title>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title>Listado</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
 <body>
-	<h1> Lista de Roles	</h1>
-	<table>
-		<th:block th:each="p: ${ltsRole}">
-			<tr>
-				<td th:text ="${p.idrole}"></td>
-				<td th:text ="${p.name}"></td>
-				<td th:text ="${p.description}"></td>
-			</tr>
-		</th:block>
-	</table>
+    <div class="container">
+        <h1>Lista de Roles</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID Rol</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="role : ${ltsRole}">
+                    <tr>
+                        <td th:text="${role.idrole}"></td>
+                        <td th:text="${role.name}"></td>
+                        <td th:text="${role.description}"></td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
 
-	
-	<h1>Lista de Personas</h1>
-	<table border="1">
-			<th:block th:each="p: ${ltsPerson}">
-				<tr>
-					<td th:text ="${p.idperson}"></td>
-					<td th:text ="${p.fistname}"></td>
-					<td th:text ="${p.lastname}"></td>
-					<td th:text ="${p.user.name}"></td>
-					<td th:text ="${p.user.role.name}"></td>
-				</tr>
-			</th:block>
-		</table>
+        <h1>Lista de Personas</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID Persona</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Usuario</th>
+                    <th>Rol</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="person : ${ltsPerson}">
+                    <tr>
+                        <td th:text="${person.idperson}"></td>
+                        <td th:text="${person.firstname}"></td>
+                        <td th:text="${person.lastname}"></td>
+                        <td th:text="${person.user.name}"></td>
+                        <td th:text="${person.user.role.name}"></td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
+

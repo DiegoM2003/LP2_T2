@@ -4,9 +4,11 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+	
 
 import pe.edu.cibertec.web.model.User;
 import pe.edu.cibertec.web.repository.IUserRepository;
+
 
 @Service
 public class UserService {
@@ -30,8 +32,15 @@ public class UserService {
 		//invocar al CRUD del repository
 		return userRepository.save(user);
 	}
-	
-	//metodo actualizar
-	//metodo leer
-	//metodo eliminar
+		
+		//metodo actualizar
+
+		
+		//metodo leer
+		
+			
+		//metodo eliminar
+
+    
 }
+
